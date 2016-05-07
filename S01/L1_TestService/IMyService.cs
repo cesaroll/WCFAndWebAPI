@@ -24,5 +24,8 @@ namespace L1_TestService
 
         [OperationContract]
         int[] GetSorted(int[] ar);
+
+        [OperationContract]
+        List<Country> CountriesGetAll();
     }
 }

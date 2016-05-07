@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mime;
 using L1_TestService.Entities;
 
 namespace L1_TestService
@@ -43,7 +45,38 @@ namespace L1_TestService
             Array.Sort(ar);
 
             return ar;
-
         }
+
+
+        public List<Country> CountriesGetAll()
+        {
+            var countries = new List<Country>();
+            
+            var conStr = @"Data Source=localhost;Initial Catalog=WCF;Integrated Security=True";
+
+            using (var conn = new SqlConnection(conStr))
+            {
+                var cmd = new SqlCommand("Select Id, Name From Countries", conn);
+
+                conn.Open();
+
+                var dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    countries.Add(new Country()
+                    {
+                        Id = int.Parse(dr["Id"].ToString()),
+                        Name = dr["Name"].ToString()
+                    });
+                }
+
+                dr.Close();
+                conn.Close();
+            }
+
+            return countries;
+        }
+
     }
 }
