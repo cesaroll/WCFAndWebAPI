@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Net.Mime;
 using L1_TestService.Entities;
+using L1_TestService.Util;
 
 namespace L1_TestService
 {
@@ -51,10 +51,8 @@ namespace L1_TestService
         public List<Country> CountriesGetAll()
         {
             var countries = new List<Country>();
-            
-            var conStr = @"Data Source=localhost;Initial Catalog=WCF;Integrated Security=True";
 
-            using (var conn = new SqlConnection(conStr))
+            using (var conn = DbUtil.WCFGetConnection())
             {
                 var cmd = new SqlCommand("Select Id, Name From Countries", conn);
 
