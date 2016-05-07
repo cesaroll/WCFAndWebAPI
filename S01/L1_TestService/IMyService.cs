@@ -1,4 +1,6 @@
-﻿using System.ServiceModel;
+﻿using System.Collections.Generic;
+using System.ServiceModel;
+using L1_TestService.Entities;
 
 namespace L1_TestService
 {
@@ -12,7 +14,10 @@ namespace L1_TestService
         string GetMessage(string Name);
 
         [OperationContract]
-        string GetResult(int Sid, string SName, int M1, int M2, int M3);
+        string GetResult(Student Student);
+
+        [OperationContract]
+        Student GetTopper(List<Student> Students);
 
         [OperationContract]
         int GetMax(int[] ar);

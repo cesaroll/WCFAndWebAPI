@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using L1_TestService.Entities;
 
 namespace L1_TestService
 {
@@ -16,15 +17,20 @@ namespace L1_TestService
             return "Hello Mr./Ms " + Name;
         }
 
-        public string GetResult(int Sid, string SName, int M1, int M2, int M3)
+        public string GetResult(Student s)
         {
-            double avg = (M1 + M2 + M3)/3.0;
+            double avg = s.Grades.Average();
 
             if (avg < 35)
                 return "Fail";
             else
                 return "Pass";
 
+        }
+
+        public Student GetTopper(List<Student> students)
+        {
+            return students.OrderByDescending(s => s.Grades.Average()).FirstOrDefault();
         }
 
         public int GetMax(int[] ar)
