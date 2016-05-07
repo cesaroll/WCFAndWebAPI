@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using DataLib.Util;
+using DataLib.Factory;
 using ModelLib.Query;
 
 namespace TestService
@@ -50,30 +49,10 @@ namespace TestService
 
         public List<Country> CountriesGetAll()
         {
-            var countries = new List<Country>();
+            ICountryFactory countryFact = new CountryFactory(); //TODO: We will use dependency injection instead of this.
 
-            using (var conn = DbUtil.WCFGetConnection())
-            {
-                var cmd = new SqlCommand("Select Id, Name From Countries", conn);
+            return countryFact.GetAll();
 
-                conn.Open();
-
-                var dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    countries.Add(new Country()
-                    {
-                        Id = int.Parse(dr["Id"].ToString()),
-                        Name = dr["Name"].ToString()
-                    });
-                }
-
-                dr.Close();
-                conn.Close();
-            }
-
-            return countries;
         }
 
     }

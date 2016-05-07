@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ModelLib">
+      <HintPath>..\..\bin\ModelLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -40,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\CountryFactory.cs" />
+    <Compile Include="Factory\Factory.cs" />
+    <Compile Include="Factory\ICountryFactory.cs" />
+    <Compile Include="Factory\IFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\DbUtil.cs" />
   </ItemGroup>
