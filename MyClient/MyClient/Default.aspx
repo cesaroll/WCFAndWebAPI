@@ -11,7 +11,7 @@
     <div>
     Hola
     </div>
-        <asp:ListBox ID="lbCountries" runat="server"></asp:ListBox>
+        <asp:ListBox ID="lbCountries" runat="server" Height="260px" Width="208px"></asp:ListBox>
     </form>
 </body>
 </html>

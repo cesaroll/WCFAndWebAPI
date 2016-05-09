@@ -8,6 +8,22 @@ namespace TestService
 {
     public class MyService : IMyService
     {
+        /*
+        private ICountryFactory CountryFactory { get; set; }
+
+        public MyService()
+            : this(DependencyFactory.Resolve<ICountryFactory>())
+        {
+        }
+
+
+        public MyService(ICountryFactory countryFactory)
+        {
+            CountryFactory = countryFactory;
+        }
+        */
+
+
         public string GetData()
         {
             return "www.youtube.com";
@@ -49,10 +65,9 @@ namespace TestService
 
         public List<Country> CountriesGetAll()
         {
-            ICountryFactory countryFact = new CountryFactory(); //TODO: We will use dependency injection instead of this.
+            ICountryFactory countryFact = DependencyFactory.Resolve<ICountryFactory>();
 
             return countryFact.GetAll();
-
         }
 
     }
