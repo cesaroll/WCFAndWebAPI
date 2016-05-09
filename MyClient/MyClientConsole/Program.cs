@@ -10,6 +10,36 @@ namespace MyClientConsole
 {
     class Program
     {
+
+        private void DisplayAllCountriesFromIIS()
+        {
+            var client = new MySrvRefOnIIS.MyServiceClient();
+
+
+            string data = client.GetData();
+
+            Console.Clear();
+            Console.WriteLine(data);
+            Console.WriteLine();
+
+            
+            var countries = client.CountriesGetAll();
+
+            
+            Console.WriteLine("Countries:");
+            Console.WriteLine("========  =======================================");
+            Console.WriteLine("   ID     Name");
+            Console.WriteLine("========  =======================================");
+
+
+            foreach (var country in countries)
+            {
+                Console.WriteLine("   {0,2}     {1}", country.Id, country.Name);
+            }
+            
+            Console.ReadKey(true);
+        }
+
         private void Multiplication()
         {
             var client = new MulServiceClient("BasicHttpBinding_IMulService");
@@ -77,6 +107,9 @@ namespace MyClientConsole
                     case 'B':
                         Multiplication();
                         break;
+                    case 'C':
+                        DisplayAllCountriesFromIIS();
+                        break;
                 }
 
 
@@ -91,6 +124,7 @@ namespace MyClientConsole
             Console.Clear();
             Console.WriteLine("A) Display All Countries");
             Console.WriteLine("B) Multiplication");
+            Console.WriteLine("C) Display All Countries from IIS");
 
             Console.WriteLine();
             Console.WriteLine("Type a letter or '.' to leave.");

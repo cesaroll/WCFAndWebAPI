@@ -55,6 +55,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\MySrvRefOnIIS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -84,6 +89,25 @@
     <None Include="Service References\MyServiceReference\MyService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.Country.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.Student.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MySrvRefOnIIS\MyService.wsdl" />
+    <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -91,6 +115,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\MulServiceReference\" />
     <WCFMetadataStorage Include="Service References\MyServiceReference\" />
+    <WCFMetadataStorage Include="Service References\MySrvRefOnIIS\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MyServiceReference\configuration91.svcinfo" />
@@ -115,6 +140,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MulServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MySrvRefOnIIS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MySrvRefOnIIS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MySrvRefOnIIS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

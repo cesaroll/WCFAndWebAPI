@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd8cf05a-21ff-408c-8790-4914d7376225" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MyServiceOnIIS.xsd" MetadataType="Schema" ID="a319a384-60d8-4d9f-a383-f861ffae968b" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd1" />
+    <MetadataFile FileName="MyServiceOnIIS1.xsd" MetadataType="Schema" ID="a54c7047-92f1-477d-a8f7-46f27d8229e5" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd2" />
+    <MetadataFile FileName="MyServiceOnIIS2.xsd" MetadataType="Schema" ID="44cabaf0-3b88-444d-9dc4-1ce91427c8da" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd0" />
+    <MetadataFile FileName="MyService.wsdl" MetadataType="Wsdl" ID="3f106a20-f9a7-45f0-9b92-6d41369d81e3" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?wsdl" />
+    <MetadataFile FileName="MyServiceOnIIS.disco" MetadataType="Disco" ID="de6b24a0-25b2-47c2-bb8d-12396b5a64c6" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?disco" />
+    <MetadataFile FileName="MyServiceOnIIS3.xsd" MetadataType="Schema" ID="0cefcdb7-ef5a-46ad-84d5-a38717139db0" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
