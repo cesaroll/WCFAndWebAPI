@@ -196,6 +196,18 @@ namespace MyClientConsole.MySrvRefOnIIS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountriesGetAll", ReplyAction="http://tempuri.org/CountriesService/CountriesGetAllResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country>> CountriesGetAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyInt", ReplyAction="http://tempuri.org/CountriesService/MultiplyIntResponse")]
+        int MultiplyInt(int a, int b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyInt", ReplyAction="http://tempuri.org/CountriesService/MultiplyIntResponse")]
+        System.Threading.Tasks.Task<int> MultiplyIntAsync(int a, int b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyDouble", ReplyAction="http://tempuri.org/CountriesService/MultiplyDoubleResponse")]
+        double MultiplyDouble(double a, double b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyDouble", ReplyAction="http://tempuri.org/CountriesService/MultiplyDoubleResponse")]
+        System.Threading.Tasks.Task<double> MultiplyDoubleAsync(double a, double b);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -279,6 +291,22 @@ namespace MyClientConsole.MySrvRefOnIIS {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country>> CountriesGetAllAsync() {
             return base.Channel.CountriesGetAllAsync();
+        }
+        
+        public int MultiplyInt(int a, int b) {
+            return base.Channel.MultiplyInt(a, b);
+        }
+        
+        public System.Threading.Tasks.Task<int> MultiplyIntAsync(int a, int b) {
+            return base.Channel.MultiplyIntAsync(a, b);
+        }
+        
+        public double MultiplyDouble(double a, double b) {
+            return base.Channel.MultiplyDouble(a, b);
+        }
+        
+        public System.Threading.Tasks.Task<double> MultiplyDoubleAsync(double a, double b) {
+            return base.Channel.MultiplyDoubleAsync(a, b);
         }
     }
 }

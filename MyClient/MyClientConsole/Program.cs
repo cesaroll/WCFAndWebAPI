@@ -4,13 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MyClientConsole.MulServiceReference;
+using MyClientConsole.Util;
 
 namespace MyClientConsole
 {
     class Program
     {
 
-        private void DisplayAllCountriesFromIIS()
+        protected virtual void MultiplicationOverloaded()
+        {
+            Console.Clear();
+            Console.WriteLine("Calling WebService...");
+            var serviceClient = ServiceFactory.GetMainService();
+
+            Console.Clear();
+
+            Console.WriteLine("  5 x 5   = {0}", serviceClient.MultiplyInt(5,5));
+            Console.WriteLine("5.5 x 5.5 = {0}", serviceClient.MultiplyDouble(5.5,5.5));
+
+            Console.ReadKey(true);
+
+        }
+
+        protected virtual void DisplayAllCountriesFromIIS()
         {
             Console.Clear();
             Console.WriteLine("Calling WebService...");
@@ -42,7 +58,7 @@ namespace MyClientConsole
             Console.ReadKey(true);
         }
 
-        private void Multiplication()
+        protected virtual void Multiplication()
         {
             var client = new MulServiceClient("BasicHttpBinding_IMulService");
 
@@ -63,7 +79,7 @@ namespace MyClientConsole
 
         }
 
-        private void DisplayAllCountries()
+        protected virtual void DisplayAllCountries()
         {
             Console.Clear();
             Console.WriteLine("Calling WebService...");
@@ -94,7 +110,7 @@ namespace MyClientConsole
             prog.Menu();
         }
 
-        private void Menu()
+        protected virtual void Menu()
         {
             char value = ' ';
 
@@ -117,6 +133,9 @@ namespace MyClientConsole
                     case 'C':
                         DisplayAllCountriesFromIIS();
                         break;
+                    case 'D':
+                        MultiplicationOverloaded();
+                        break;
                 }
 
 
@@ -126,12 +145,13 @@ namespace MyClientConsole
 
         }
 
-        private void DisplayMenu()
+        protected virtual void DisplayMenu()
         {
             Console.Clear();
             Console.WriteLine("A) Display All Countries");
             Console.WriteLine("B) Multiplication");
             Console.WriteLine("C) Display All Countries from IIS");
+            Console.WriteLine("D) multiplication using Overloading");
 
             Console.WriteLine();
             Console.WriteLine("Type a letter or '.' to leave.");

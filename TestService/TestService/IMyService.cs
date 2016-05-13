@@ -27,5 +27,26 @@ namespace TestService
 
         [OperationContract(Name = "CountriesGetAll")]
         List<Country> CountriesGetAll();
+
+        #region Method Overloading
+        /// <summary>
+        /// Multiply Integer
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        [OperationContract(Name = "MultiplyInt")]
+        int Multiply(int a, int b);
+
+        /// <summary>
+        /// Multiply Double
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        [OperationContract(Name = "MultiplyDouble")]
+        double Multiply(double a, double b);
+
+        #endregion
     }
 }
