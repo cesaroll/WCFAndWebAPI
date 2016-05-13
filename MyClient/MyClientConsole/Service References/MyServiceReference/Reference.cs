@@ -152,76 +152,76 @@ namespace MyClientConsole.MyServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MyServiceReference.IMyService")]
-    public interface IMyService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MyServiceReference.CountriesService")]
+    public interface CountriesService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetData", ReplyAction="http://tempuri.org/IMyService/GetDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetData", ReplyAction="http://tempuri.org/CountriesService/GetDataResponse")]
         string GetData();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetData", ReplyAction="http://tempuri.org/IMyService/GetDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetData", ReplyAction="http://tempuri.org/CountriesService/GetDataResponse")]
         System.Threading.Tasks.Task<string> GetDataAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetMessage", ReplyAction="http://tempuri.org/IMyService/GetMessageResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetMessage", ReplyAction="http://tempuri.org/CountriesService/GetMessageResponse")]
         string GetMessage(string Name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetMessage", ReplyAction="http://tempuri.org/IMyService/GetMessageResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetMessage", ReplyAction="http://tempuri.org/CountriesService/GetMessageResponse")]
         System.Threading.Tasks.Task<string> GetMessageAsync(string Name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetResult", ReplyAction="http://tempuri.org/IMyService/GetResultResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetResult", ReplyAction="http://tempuri.org/CountriesService/GetResultResponse")]
         string GetResult(MyClientConsole.MyServiceReference.Student Student);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetResult", ReplyAction="http://tempuri.org/IMyService/GetResultResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetResult", ReplyAction="http://tempuri.org/CountriesService/GetResultResponse")]
         System.Threading.Tasks.Task<string> GetResultAsync(MyClientConsole.MyServiceReference.Student Student);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetTopper", ReplyAction="http://tempuri.org/IMyService/GetTopperResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetTopper", ReplyAction="http://tempuri.org/CountriesService/GetTopperResponse")]
         MyClientConsole.MyServiceReference.Student GetTopper(System.Collections.Generic.List<MyClientConsole.MyServiceReference.Student> Students);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetTopper", ReplyAction="http://tempuri.org/IMyService/GetTopperResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetTopper", ReplyAction="http://tempuri.org/CountriesService/GetTopperResponse")]
         System.Threading.Tasks.Task<MyClientConsole.MyServiceReference.Student> GetTopperAsync(System.Collections.Generic.List<MyClientConsole.MyServiceReference.Student> Students);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetMax", ReplyAction="http://tempuri.org/IMyService/GetMaxResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetMax", ReplyAction="http://tempuri.org/CountriesService/GetMaxResponse")]
         int GetMax(System.Collections.Generic.List<int> ar);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetMax", ReplyAction="http://tempuri.org/IMyService/GetMaxResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetMax", ReplyAction="http://tempuri.org/CountriesService/GetMaxResponse")]
         System.Threading.Tasks.Task<int> GetMaxAsync(System.Collections.Generic.List<int> ar);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetSorted", ReplyAction="http://tempuri.org/IMyService/GetSortedResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetSorted", ReplyAction="http://tempuri.org/CountriesService/GetSortedResponse")]
         System.Collections.Generic.List<int> GetSorted(System.Collections.Generic.List<int> ar);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetSorted", ReplyAction="http://tempuri.org/IMyService/GetSortedResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetSorted", ReplyAction="http://tempuri.org/CountriesService/GetSortedResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<int>> GetSortedAsync(System.Collections.Generic.List<int> ar);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/CountriesGetAll", ReplyAction="http://tempuri.org/IMyService/CountriesGetAllResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountriesGetAll", ReplyAction="http://tempuri.org/CountriesService/CountriesGetAllResponse")]
         System.Collections.Generic.List<MyClientConsole.MyServiceReference.Country> CountriesGetAll();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/CountriesGetAll", ReplyAction="http://tempuri.org/IMyService/CountriesGetAllResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountriesGetAll", ReplyAction="http://tempuri.org/CountriesService/CountriesGetAllResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<MyClientConsole.MyServiceReference.Country>> CountriesGetAllAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMyServiceChannel : MyClientConsole.MyServiceReference.IMyService, System.ServiceModel.IClientChannel {
+    public interface CountriesServiceChannel : MyClientConsole.MyServiceReference.CountriesService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MyServiceClient : System.ServiceModel.ClientBase<MyClientConsole.MyServiceReference.IMyService>, MyClientConsole.MyServiceReference.IMyService {
+    public partial class CountriesServiceClient : System.ServiceModel.ClientBase<MyClientConsole.MyServiceReference.CountriesService>, MyClientConsole.MyServiceReference.CountriesService {
         
-        public MyServiceClient() {
+        public CountriesServiceClient() {
         }
         
-        public MyServiceClient(string endpointConfigurationName) : 
+        public CountriesServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public MyServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public CountriesServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public MyServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CountriesServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public MyServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CountriesServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

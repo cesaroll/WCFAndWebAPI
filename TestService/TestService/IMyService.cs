@@ -4,7 +4,7 @@ using ModelLib.Query;
 
 namespace TestService
 {
-    [ServiceContract]
+    [ServiceContract(Name = "CountriesService")]
     public interface IMyService
     {
         [OperationContract]
@@ -25,7 +25,7 @@ namespace TestService
         [OperationContract]
         int[] GetSorted(int[] ar);
 
-        [OperationContract]
+        [OperationContract(Name = "CountriesGetAll")]
         List<Country> CountriesGetAll();
     }
 }

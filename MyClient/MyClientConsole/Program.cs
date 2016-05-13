@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MyClientConsole.MulServiceReference;
-using MyClientConsole.MyServiceReference;
 
 namespace MyClientConsole
 {
@@ -13,7 +12,10 @@ namespace MyClientConsole
 
         private void DisplayAllCountriesFromIIS()
         {
-            var client = new MySrvRefOnIIS.MyServiceClient();
+            Console.Clear();
+            Console.WriteLine("Calling WebService...");
+
+            var client = new MySrvRefOnIIS.CountriesServiceClient();
 
 
             string data = client.GetData();
@@ -63,7 +65,10 @@ namespace MyClientConsole
 
         private void DisplayAllCountries()
         {
-            var client = new MyServiceClient();
+            Console.Clear();
+            Console.WriteLine("Calling WebService...");
+
+            var client = new MyServiceReference.CountriesServiceClient();
 
             var countries = client.CountriesGetAll();
 
@@ -98,6 +103,8 @@ namespace MyClientConsole
                 DisplayMenu();
 
                 value = char.ToUpper(Console.ReadKey(true).KeyChar);
+
+                Console.Clear();
 
                 switch (value)
                 {
