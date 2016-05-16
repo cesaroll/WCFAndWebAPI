@@ -1,12 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using DataLib.Util;
 using ModelLib.Query;
+using ModelLib.Util;
 
 namespace DataLib.Factory
 {
     public class CountryFactory: Factory, ICountryFactory
     {
+        /// <summary>
+        /// Get All countries
+        /// </summary>
+        /// <returns></returns>
         public List<Country> GetAll()
         {
             var countries = new List<Country>();
@@ -33,6 +40,67 @@ namespace DataLib.Factory
             }
 
             return countries;
+        }
+
+        /// <summary>
+        /// Save Country
+        /// </summary>
+        /// <param name="country"></param>
+        /// <returns></returns>
+        public IReturnMsg Save(Country country)
+        {
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+
+            var retMsg = DependencyFactory.Resolve<IReturnMsg>();
+
+            string queryStr = @"Merge Countries as t
+Using (Values(@Id, @Name)) as v (Id, Name)
+  On t.id = v.Id
+When Matched Then
+	Update Set t.Name = v.Name
+When Not Matched Then
+	Insert (Id, Name)
+	Values(v.Id, v.Name);";
+
+            try
+            {
+                conn = DbUtil.WCFGetConnection();
+
+                cmd = new SqlCommand(queryStr, conn);
+                
+                cmd.Parameters.Add("@Id", SqlDbType.Int).Value = country.Id;
+                cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = country.Name;
+                
+                conn.Open();
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    retMsg.Success = true;
+                    retMsg.Message = "Country Saved";
+                }
+            }
+            catch (Exception e)
+            {
+                retMsg.Success = false;
+                retMsg.Message = "Country was not saved.";
+                retMsg.ex = e;
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                }
+
+                if (cmd != null)
+                    cmd.Dispose();
+                
+            }
+
+            return retMsg;
+
         }
     }
 }

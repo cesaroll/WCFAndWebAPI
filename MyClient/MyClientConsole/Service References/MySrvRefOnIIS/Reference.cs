@@ -151,6 +151,83 @@ namespace MyClientConsole.MySrvRefOnIIS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SvcReturnMsg", Namespace="http://schemas.datacontract.org/2004/07/ModelLib.Util")]
+    [System.SerializableAttribute()]
+    public partial class SvcReturnMsg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SuccessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Exception exField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Success {
+            get {
+                return this.SuccessField;
+            }
+            set {
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Exception ex {
+            get {
+                return this.exField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.exField, value) != true)) {
+                    this.exField = value;
+                    this.RaisePropertyChanged("ex");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MySrvRefOnIIS.CountriesService")]
     public interface CountriesService {
@@ -196,6 +273,12 @@ namespace MyClientConsole.MySrvRefOnIIS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountriesGetAll", ReplyAction="http://tempuri.org/CountriesService/CountriesGetAllResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country>> CountriesGetAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountrySave", ReplyAction="http://tempuri.org/CountriesService/CountrySaveResponse")]
+        MyClientConsole.MySrvRefOnIIS.SvcReturnMsg CountrySave(MyClientConsole.MySrvRefOnIIS.Country Country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountrySave", ReplyAction="http://tempuri.org/CountriesService/CountrySaveResponse")]
+        System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.SvcReturnMsg> CountrySaveAsync(MyClientConsole.MySrvRefOnIIS.Country Country);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyInt", ReplyAction="http://tempuri.org/CountriesService/MultiplyIntResponse")]
         int MultiplyInt(int a, int b);
@@ -291,6 +374,14 @@ namespace MyClientConsole.MySrvRefOnIIS {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country>> CountriesGetAllAsync() {
             return base.Channel.CountriesGetAllAsync();
+        }
+        
+        public MyClientConsole.MySrvRefOnIIS.SvcReturnMsg CountrySave(MyClientConsole.MySrvRefOnIIS.Country Country) {
+            return base.Channel.CountrySave(Country);
+        }
+        
+        public System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.SvcReturnMsg> CountrySaveAsync(MyClientConsole.MySrvRefOnIIS.Country Country) {
+            return base.Channel.CountrySaveAsync(Country);
         }
         
         public int MultiplyInt(int a, int b) {

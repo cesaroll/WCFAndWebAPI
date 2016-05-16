@@ -1,9 +1,10 @@
-﻿using Microsoft.Practices.Unity;
-using MyClientConsole.MyServiceReference;
+﻿using DataLib.Factory;
+using Microsoft.Practices.Unity;
+using ModelLib.Util;
 
-namespace MyClientConsole.Util
+namespace DataLib.Util
 {
-    internal static class DependencyFactory
+    internal class DependencyFactory
     {
         public static IUnityContainer UnityContainer { get; set; }
 
@@ -11,9 +12,10 @@ namespace MyClientConsole.Util
         {
             var container = new UnityContainer();
 
-            
+            container.RegisterType<IReturnMsg, ReturnMsg>();
 
             UnityContainer = container;
+
         }
 
         public static T Resolve<T>()
@@ -27,7 +29,6 @@ namespace MyClientConsole.Util
 
             return ret;
 
-        }
-
+        } 
     }
 }

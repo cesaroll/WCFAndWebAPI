@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using MyClientConsole.MulServiceReference;
@@ -10,17 +11,50 @@ namespace MyClientConsole
 {
     class Program
     {
+        protected virtual void SaveCountry()
+        {
+            Console.Clear();
+            Console.WriteLine("Calling web Service...");
+            
+            var srvClient = ServiceFactory.GetMainService();
 
+            var country = new MySrvRefOnIIS.Country() 
+            {
+                Id = 1, 
+                Name = "Mexico"
+            };
+
+            var ret = srvClient.CountrySave(country);
+           
+
+            if (ret.Success)
+            {
+                Console.WriteLine("Success!");
+                Console.WriteLine(ret.Message);
+            }
+            else
+            {
+                Console.WriteLine("Erro:");
+                Console.WriteLine(ret.Message + "\n");
+                Console.WriteLine(ret.ex.Message);
+            }
+
+            Console.ReadKey(true);
+
+        }
         protected virtual void MultiplicationOverloaded()
         {
             Console.Clear();
             Console.WriteLine("Calling WebService...");
             var serviceClient = ServiceFactory.GetMainService();
 
+            int first = serviceClient.MultiplyInt(5, 5);
+            double second = serviceClient.MultiplyDouble(5.5, 5.5);
+
             Console.Clear();
 
-            Console.WriteLine("  5 x 5   = {0}", serviceClient.MultiplyInt(5,5));
-            Console.WriteLine("5.5 x 5.5 = {0}", serviceClient.MultiplyDouble(5.5,5.5));
+            Console.WriteLine("  5 x 5   = {0}", first);
+            Console.WriteLine("5.5 x 5.5 = {0}", second);
 
             Console.ReadKey(true);
 
@@ -136,6 +170,9 @@ namespace MyClientConsole
                     case 'D':
                         MultiplicationOverloaded();
                         break;
+                    case 'E':
+                        SaveCountry();
+                        break;
                 }
 
 
@@ -151,7 +188,8 @@ namespace MyClientConsole
             Console.WriteLine("A) Display All Countries");
             Console.WriteLine("B) Multiplication");
             Console.WriteLine("C) Display All Countries from IIS");
-            Console.WriteLine("D) multiplication using Overloading");
+            Console.WriteLine("D) Multiplication using Overloading");
+            Console.WriteLine("E) Save Country");
 
             Console.WriteLine();
             Console.WriteLine("Type a letter or '.' to leave.");

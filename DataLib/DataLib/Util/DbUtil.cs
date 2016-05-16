@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace DataLib.Util
 {
-    public class DbUtil
+    internal class DbUtil
     {
         public static SqlConnection WCFGetConnection()
         {

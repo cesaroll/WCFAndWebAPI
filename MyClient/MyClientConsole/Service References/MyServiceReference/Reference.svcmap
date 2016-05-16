@@ -25,6 +25,8 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="MyService.wsdl" MetadataType="Wsdl" ID="6e8f952f-1626-42d9-9db0-e0c27a38753b" SourceId="1" SourceUrl="http://localhost:49037/MyService.svc?wsdl" />
+    <MetadataFile FileName="MyService4.xsd" MetadataType="Schema" ID="67a87385-bb0e-4d2c-8f47-1bfb6f7c8b9c" SourceId="1" SourceUrl="http://localhost:49037/MyService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MyService41.xsd" MetadataType="Schema" ID="8fcfc26c-03ce-4c64-a21a-a3bfa747e0b4" SourceId="1" SourceUrl="http://localhost:49037/MyService.svc?xsd=xsd5" />
     <MetadataFile FileName="MyService.xsd" MetadataType="Schema" ID="90501c2a-724b-48a2-9d5a-3859d7b3f05f" SourceId="1" SourceUrl="http://localhost:49037/MyService.svc?xsd=xsd2" />
     <MetadataFile FileName="MyService1.xsd" MetadataType="Schema" ID="0e8be91c-956f-4de3-b5a3-07b80598754e" SourceId="1" SourceUrl="http://localhost:49037/MyService.svc?xsd=xsd3" />
     <MetadataFile FileName="MyService2.xsd" MetadataType="Schema" ID="14d0d334-ac82-4d98-8904-65609ada0555" SourceId="1" SourceUrl="http://localhost:49037/MyService.svc?xsd=xsd0" />

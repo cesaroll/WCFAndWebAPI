@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
 using ModelLib.Query;
+using ModelLib.Util;
 
 namespace TestService
 {
@@ -27,6 +28,9 @@ namespace TestService
 
         [OperationContract(Name = "CountriesGetAll")]
         List<Country> CountriesGetAll();
+
+        [OperationContract]
+        ReturnMsg CountrySave(Country Country);
 
         #region Method Overloading
         /// <summary>

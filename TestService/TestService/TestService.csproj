@@ -63,7 +63,7 @@
     <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyFactory.cs" />
+    <Compile Include="Util\DependencyFactory.cs" />
     <Compile Include="IMyService.cs" />
     <Compile Include="MyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

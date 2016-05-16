@@ -43,6 +43,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\Country.cs" />
     <Compile Include="Query\Student.cs" />
+    <Compile Include="Util\IReturnMsg.cs" />
+    <Compile Include="Util\ReturnMsg.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Command\" />

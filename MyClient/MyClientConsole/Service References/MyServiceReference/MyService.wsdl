@@ -6,6 +6,8 @@
       <xsd:import schemaLocation="http://localhost:49037/MyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:49037/MyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ModelLib.Query" />
       <xsd:import schemaLocation="http://localhost:49037/MyService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:49037/MyService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ModelLib.Util" />
+      <xsd:import schemaLocation="http://localhost:49037/MyService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="CountriesService_GetData_InputMessage">
@@ -50,6 +52,24 @@
   <wsdl:message name="CountriesService_CountriesGetAll_OutputMessage">
     <wsdl:part name="parameters" element="tns:CountriesGetAllResponse" />
   </wsdl:message>
+  <wsdl:message name="CountriesService_CountrySave_InputMessage">
+    <wsdl:part name="parameters" element="tns:CountrySave" />
+  </wsdl:message>
+  <wsdl:message name="CountriesService_CountrySave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountrySaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="CountriesService_MultiplyInt_InputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyInt" />
+  </wsdl:message>
+  <wsdl:message name="CountriesService_MultiplyInt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyIntResponse" />
+  </wsdl:message>
+  <wsdl:message name="CountriesService_MultiplyDouble_InputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyDouble" />
+  </wsdl:message>
+  <wsdl:message name="CountriesService_MultiplyDouble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyDoubleResponse" />
+  </wsdl:message>
   <wsdl:portType name="CountriesService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/CountriesService/GetData" message="tns:CountriesService_GetData_InputMessage" />
@@ -78,6 +98,18 @@
     <wsdl:operation name="CountriesGetAll">
       <wsdl:input wsaw:Action="http://tempuri.org/CountriesService/CountriesGetAll" message="tns:CountriesService_CountriesGetAll_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/CountriesService/CountriesGetAllResponse" message="tns:CountriesService_CountriesGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CountrySave">
+      <wsdl:input wsaw:Action="http://tempuri.org/CountriesService/CountrySave" message="tns:CountriesService_CountrySave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/CountriesService/CountrySaveResponse" message="tns:CountriesService_CountrySave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyInt">
+      <wsdl:input wsaw:Action="http://tempuri.org/CountriesService/MultiplyInt" message="tns:CountriesService_MultiplyInt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/CountriesService/MultiplyIntResponse" message="tns:CountriesService_MultiplyInt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyDouble">
+      <wsdl:input wsaw:Action="http://tempuri.org/CountriesService/MultiplyDouble" message="tns:CountriesService_MultiplyDouble_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/CountriesService/MultiplyDoubleResponse" message="tns:CountriesService_MultiplyDouble_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_CountriesService" type="tns:CountriesService">
@@ -138,6 +170,33 @@
     </wsdl:operation>
     <wsdl:operation name="CountriesGetAll">
       <soap:operation soapAction="http://tempuri.org/CountriesService/CountriesGetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountrySave">
+      <soap:operation soapAction="http://tempuri.org/CountriesService/CountrySave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyInt">
+      <soap:operation soapAction="http://tempuri.org/CountriesService/MultiplyInt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyDouble">
+      <soap:operation soapAction="http://tempuri.org/CountriesService/MultiplyDouble" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

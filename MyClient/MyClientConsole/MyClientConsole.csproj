@@ -94,6 +94,9 @@
     <None Include="Service References\MyServiceReference\MyClientConsole.MyServiceReference.Country.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MyServiceReference\MyClientConsole.MyServiceReference.ReturnMsg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MyServiceReference\MyClientConsole.MyServiceReference.Student.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -110,10 +113,19 @@
     <None Include="Service References\MyServiceReference\MyService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MyServiceReference\MyService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MyServiceReference\MyService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.Country.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.Student.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.SvcReturnMsg.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MySrvRefOnIIS\MyService.wsdl" />
@@ -175,6 +187,12 @@
     <None Include="Service References\MySrvRefOnIIS\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS41.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MySrvRefOnIIS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

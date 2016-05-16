@@ -1,8 +1,11 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using DataLib.Factory;
 using ModelLib.Query;
+using ModelLib.Util;
+using TestService.Util;
 
 namespace TestService
 {
@@ -68,6 +71,14 @@ namespace TestService
             ICountryFactory countryFact = DependencyFactory.Resolve<ICountryFactory>();
 
             return countryFact.GetAll();
+        }
+
+        public ReturnMsg CountrySave(Country country)
+        {
+            var fact = DependencyFactory.Resolve<ICountryFactory>();
+
+            return fact.Save(country) as ReturnMsg;
+
         }
 
         #region Method overloading

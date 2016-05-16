@@ -25,8 +25,10 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="MyServiceOnIIS.xsd" MetadataType="Schema" ID="a319a384-60d8-4d9f-a383-f861ffae968b" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd1" />
+    <MetadataFile FileName="MyServiceOnIIS4.xsd" MetadataType="Schema" ID="225f13e3-a98a-48b8-82b4-881ce316d9ad" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd4" />
     <MetadataFile FileName="MyServiceOnIIS1.xsd" MetadataType="Schema" ID="a54c7047-92f1-477d-a8f7-46f27d8229e5" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd2" />
     <MetadataFile FileName="MyServiceOnIIS2.xsd" MetadataType="Schema" ID="44cabaf0-3b88-444d-9dc4-1ce91427c8da" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd0" />
+    <MetadataFile FileName="MyServiceOnIIS41.xsd" MetadataType="Schema" ID="303c50b1-9960-4460-86bf-ec78c209a0a8" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd5" />
     <MetadataFile FileName="MyService.wsdl" MetadataType="Wsdl" ID="3f106a20-f9a7-45f0-9b92-6d41369d81e3" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?wsdl" />
     <MetadataFile FileName="MyServiceOnIIS.disco" MetadataType="Disco" ID="de6b24a0-25b2-47c2-bb8d-12396b5a64c6" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?disco" />
     <MetadataFile FileName="MyServiceOnIIS3.xsd" MetadataType="Schema" ID="0cefcdb7-ef5a-46ad-84d5-a38717139db0" SourceId="1" SourceUrl="http://localhost/MyHostOnIIS/MyServiceOnIIS.svc?xsd=xsd3" />

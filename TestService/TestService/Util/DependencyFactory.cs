@@ -1,7 +1,8 @@
 ﻿using DataLib.Factory;
 using Microsoft.Practices.Unity;
+using ModelLib.Util;
 
-namespace TestService
+namespace TestService.Util
 {
     public class DependencyFactory
     {
@@ -12,7 +13,7 @@ namespace TestService
             var container = new UnityContainer();
 
             container.RegisterType<ICountryFactory, CountryFactory>();
-
+            
             UnityContainer = container;
 
         }
