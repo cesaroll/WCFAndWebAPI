@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -142,7 +143,22 @@ namespace MyClientConsole
             Console.Clear();
             Console.WriteLine("Caling Web Service...");
 
-            //var srvClitn = ServiceFactory.GetMainService();
+            var srvClient = DependencyFactory.Resolve<IMyService>();
+
+            try
+            {
+                int ret = srvClient.DivInt(12, 0);
+
+                Console.Clear();
+                Console.WriteLine("Result = {0}", ret);
+            }
+            catch (FaultException<DivFault> e)
+            {
+                Console.WriteLine(e.Detail.Message);
+                Console.WriteLine(e.Detail.OperationMessage);
+            }
+
+            Console.ReadKey(true);
 
         }
         #endregion
