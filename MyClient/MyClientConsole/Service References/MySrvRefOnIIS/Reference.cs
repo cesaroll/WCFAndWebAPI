@@ -226,95 +226,163 @@ namespace MyClientConsole.MySrvRefOnIIS {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MySrvRefOnIIS.CountriesService")]
-    public interface CountriesService {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DivFault", Namespace="http://schemas.datacontract.org/2004/07/ModelLib.Util")]
+    [System.SerializableAttribute()]
+    public partial class DivFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetData", ReplyAction="http://tempuri.org/CountriesService/GetDataResponse")]
-        string GetData();
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetData", ReplyAction="http://tempuri.org/CountriesService/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync();
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetMessage", ReplyAction="http://tempuri.org/CountriesService/GetMessageResponse")]
-        string GetMessage(string Name);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OperationMessageField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetMessage", ReplyAction="http://tempuri.org/CountriesService/GetMessageResponse")]
-        System.Threading.Tasks.Task<string> GetMessageAsync(string Name);
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetResult", ReplyAction="http://tempuri.org/CountriesService/GetResultResponse")]
-        string GetResult(MyClientConsole.MySrvRefOnIIS.Student Student);
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetResult", ReplyAction="http://tempuri.org/CountriesService/GetResultResponse")]
-        System.Threading.Tasks.Task<string> GetResultAsync(MyClientConsole.MySrvRefOnIIS.Student Student);
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OperationMessage {
+            get {
+                return this.OperationMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OperationMessageField, value) != true)) {
+                    this.OperationMessageField = value;
+                    this.RaisePropertyChanged("OperationMessage");
+                }
+            }
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetTopper", ReplyAction="http://tempuri.org/CountriesService/GetTopperResponse")]
-        MyClientConsole.MySrvRefOnIIS.Student GetTopper(System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Student> Students);
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetTopper", ReplyAction="http://tempuri.org/CountriesService/GetTopperResponse")]
-        System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.Student> GetTopperAsync(System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Student> Students);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetMax", ReplyAction="http://tempuri.org/CountriesService/GetMaxResponse")]
-        int GetMax(System.Collections.Generic.List<int> ar);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetMax", ReplyAction="http://tempuri.org/CountriesService/GetMaxResponse")]
-        System.Threading.Tasks.Task<int> GetMaxAsync(System.Collections.Generic.List<int> ar);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetSorted", ReplyAction="http://tempuri.org/CountriesService/GetSortedResponse")]
-        System.Collections.Generic.List<int> GetSorted(System.Collections.Generic.List<int> ar);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/GetSorted", ReplyAction="http://tempuri.org/CountriesService/GetSortedResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<int>> GetSortedAsync(System.Collections.Generic.List<int> ar);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountriesGetAll", ReplyAction="http://tempuri.org/CountriesService/CountriesGetAllResponse")]
-        System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country> CountriesGetAll();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountriesGetAll", ReplyAction="http://tempuri.org/CountriesService/CountriesGetAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country>> CountriesGetAllAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountrySave", ReplyAction="http://tempuri.org/CountriesService/CountrySaveResponse")]
-        MyClientConsole.MySrvRefOnIIS.ReturnMsg CountrySave(MyClientConsole.MySrvRefOnIIS.Country Country);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountrySave", ReplyAction="http://tempuri.org/CountriesService/CountrySaveResponse")]
-        System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.ReturnMsg> CountrySaveAsync(MyClientConsole.MySrvRefOnIIS.Country Country);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyInt", ReplyAction="http://tempuri.org/CountriesService/MultiplyIntResponse")]
-        int MultiplyInt(int a, int b);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyInt", ReplyAction="http://tempuri.org/CountriesService/MultiplyIntResponse")]
-        System.Threading.Tasks.Task<int> MultiplyIntAsync(int a, int b);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyDouble", ReplyAction="http://tempuri.org/CountriesService/MultiplyDoubleResponse")]
-        double MultiplyDouble(double a, double b);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyDouble", ReplyAction="http://tempuri.org/CountriesService/MultiplyDoubleResponse")]
-        System.Threading.Tasks.Task<double> MultiplyDoubleAsync(double a, double b);
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface CountriesServiceChannel : MyClientConsole.MySrvRefOnIIS.CountriesService, System.ServiceModel.IClientChannel {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MySrvRefOnIIS.IMyService")]
+    public interface IMyService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetData", ReplyAction="http://tempuri.org/IMyService/GetDataResponse")]
+        string GetData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetData", ReplyAction="http://tempuri.org/IMyService/GetDataResponse")]
+        System.Threading.Tasks.Task<string> GetDataAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetMessage", ReplyAction="http://tempuri.org/IMyService/GetMessageResponse")]
+        string GetMessage(string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetMessage", ReplyAction="http://tempuri.org/IMyService/GetMessageResponse")]
+        System.Threading.Tasks.Task<string> GetMessageAsync(string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetResult", ReplyAction="http://tempuri.org/IMyService/GetResultResponse")]
+        string GetResult(MyClientConsole.MySrvRefOnIIS.Student Student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetResult", ReplyAction="http://tempuri.org/IMyService/GetResultResponse")]
+        System.Threading.Tasks.Task<string> GetResultAsync(MyClientConsole.MySrvRefOnIIS.Student Student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetTopper", ReplyAction="http://tempuri.org/IMyService/GetTopperResponse")]
+        MyClientConsole.MySrvRefOnIIS.Student GetTopper(System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Student> Students);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetTopper", ReplyAction="http://tempuri.org/IMyService/GetTopperResponse")]
+        System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.Student> GetTopperAsync(System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Student> Students);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetMax", ReplyAction="http://tempuri.org/IMyService/GetMaxResponse")]
+        int GetMax(System.Collections.Generic.List<int> ar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetMax", ReplyAction="http://tempuri.org/IMyService/GetMaxResponse")]
+        System.Threading.Tasks.Task<int> GetMaxAsync(System.Collections.Generic.List<int> ar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetSorted", ReplyAction="http://tempuri.org/IMyService/GetSortedResponse")]
+        System.Collections.Generic.List<int> GetSorted(System.Collections.Generic.List<int> ar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetSorted", ReplyAction="http://tempuri.org/IMyService/GetSortedResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<int>> GetSortedAsync(System.Collections.Generic.List<int> ar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/CountriesGetAll", ReplyAction="http://tempuri.org/IMyService/CountriesGetAllResponse")]
+        System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country> CountriesGetAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/CountriesGetAll", ReplyAction="http://tempuri.org/IMyService/CountriesGetAllResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country>> CountriesGetAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/CountrySave", ReplyAction="http://tempuri.org/IMyService/CountrySaveResponse")]
+        MyClientConsole.MySrvRefOnIIS.ReturnMsg CountrySave(MyClientConsole.MySrvRefOnIIS.Country Country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/CountrySave", ReplyAction="http://tempuri.org/IMyService/CountrySaveResponse")]
+        System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.ReturnMsg> CountrySaveAsync(MyClientConsole.MySrvRefOnIIS.Country Country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/MultiplyInt", ReplyAction="http://tempuri.org/IMyService/MultiplyIntResponse")]
+        int MultiplyInt(int a, int b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/MultiplyInt", ReplyAction="http://tempuri.org/IMyService/MultiplyIntResponse")]
+        System.Threading.Tasks.Task<int> MultiplyIntAsync(int a, int b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/MultiplyDouble", ReplyAction="http://tempuri.org/IMyService/MultiplyDoubleResponse")]
+        double MultiplyDouble(double a, double b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/MultiplyDouble", ReplyAction="http://tempuri.org/IMyService/MultiplyDoubleResponse")]
+        System.Threading.Tasks.Task<double> MultiplyDoubleAsync(double a, double b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/DivInt", ReplyAction="http://tempuri.org/IMyService/DivIntResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MyClientConsole.MySrvRefOnIIS.DivFault), Action="http://tempuri.org/IMyService/DivIntDivFaultFault", Name="DivFault", Namespace="http://schemas.datacontract.org/2004/07/ModelLib.Util")]
+        int DivInt(int a, int b);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/DivInt", ReplyAction="http://tempuri.org/IMyService/DivIntResponse")]
+        System.Threading.Tasks.Task<int> DivIntAsync(int a, int b);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMyServiceChannel : MyClientConsole.MySrvRefOnIIS.IMyService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CountriesServiceClient : System.ServiceModel.ClientBase<MyClientConsole.MySrvRefOnIIS.CountriesService>, MyClientConsole.MySrvRefOnIIS.CountriesService {
+    public partial class MyServiceClient : System.ServiceModel.ClientBase<MyClientConsole.MySrvRefOnIIS.IMyService>, MyClientConsole.MySrvRefOnIIS.IMyService {
         
-        public CountriesServiceClient() {
+        public MyServiceClient() {
         }
         
-        public CountriesServiceClient(string endpointConfigurationName) : 
+        public MyServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public CountriesServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public MyServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CountriesServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MyServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CountriesServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MyServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -396,6 +464,14 @@ namespace MyClientConsole.MySrvRefOnIIS {
         
         public System.Threading.Tasks.Task<double> MultiplyDoubleAsync(double a, double b) {
             return base.Channel.MultiplyDoubleAsync(a, b);
+        }
+        
+        public int DivInt(int a, int b) {
+            return base.Channel.DivInt(a, b);
+        }
+        
+        public System.Threading.Tasks.Task<int> DivIntAsync(int a, int b) {
+            return base.Channel.DivIntAsync(a, b);
         }
     }
 }

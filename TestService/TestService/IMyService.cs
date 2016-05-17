@@ -5,7 +5,8 @@ using ModelLib.Util;
 
 namespace TestService
 {
-    [ServiceContract(Name = "CountriesService")]
+    //[ServiceContract(Name = "CountriesService")]
+    [ServiceContract]
     public interface IMyService
     {
         [OperationContract]
@@ -50,6 +51,13 @@ namespace TestService
         /// <returns></returns>
         [OperationContract(Name = "MultiplyDouble")]
         double Multiply(double a, double b);
+
+        #endregion
+
+        #region FaultExceptions and FaultContracts
+        [OperationContract]
+        [FaultContract(typeof(DivFault))]
+        int DivInt(int a, int b);
 
         #endregion
     }

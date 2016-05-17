@@ -99,5 +99,25 @@ namespace TestService
         }
 
         #endregion
+
+        #region FaultExceptions and FaultContracts
+
+        public int DivInt(int a, int b)
+        {
+            try
+            {
+                return a/b;
+            }
+            catch (Exception e)
+            {
+                var d = DependencyFactory.Resolve<DivFault>();
+                d.Message = "The second parameter cannot be zero";
+                d.OperationMessage = e.Message;
+
+                throw new FaultException<DivFault>(d);
+            }
+        }
+
+        #endregion
     }
 }

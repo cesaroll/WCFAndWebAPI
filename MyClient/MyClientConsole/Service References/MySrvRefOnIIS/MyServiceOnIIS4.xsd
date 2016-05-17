@@ -8,4 +8,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ReturnMsg" nillable="true" type="tns:ReturnMsg" />
+  <xs:complexType name="DivFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperationMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DivFault" nillable="true" type="tns:DivFault" />
 </xs:schema>

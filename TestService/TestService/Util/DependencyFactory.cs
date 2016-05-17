@@ -13,7 +13,8 @@ namespace TestService.Util
             var container = new UnityContainer();
 
             container.RegisterType<ICountryFactory, CountryFactory>();
-            
+            container.RegisterType<DivFault, DivFault>();
+
             UnityContainer = container;
 
         }

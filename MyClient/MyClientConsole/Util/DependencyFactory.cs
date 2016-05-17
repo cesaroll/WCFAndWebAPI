@@ -1,5 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
-using MyClientConsole.MyServiceReference;
+using MyClientConsole.MySrvRefOnIIS;
 
 namespace MyClientConsole.Util
 {
@@ -11,7 +11,7 @@ namespace MyClientConsole.Util
         {
             var container = new UnityContainer();
 
-            
+            container.RegisterType<IMyService, MyServiceClient>(new InjectionConstructor());
 
             UnityContainer = container;
         }
