@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 using System.Runtime.Serialization;
 
 namespace ModelLib.Util
@@ -10,7 +11,7 @@ namespace ModelLib.Util
         {
             Success = true;
             Message = string.Empty;
-            ex = null;
+            ExceptionMsg = string.Empty;
         }
 
         [DataMember]
@@ -18,6 +19,6 @@ namespace ModelLib.Util
         [DataMember]
         public string Message { get; set; }
         [DataMember]
-        public Exception ex { get; set; }
+        public string ExceptionMsg { get; set; }
     }
 }

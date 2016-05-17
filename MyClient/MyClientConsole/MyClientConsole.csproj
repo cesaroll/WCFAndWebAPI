@@ -77,6 +77,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Util\DependencyFactory.cs" />
+    <Compile Include="Util\ExtensionMethods.cs" />
     <Compile Include="Util\ServiceFactory.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,10 +123,10 @@
     <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.Country.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.Student.datasource">
+    <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.ReturnMsg.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.SvcReturnMsg.datasource">
+    <None Include="Service References\MySrvRefOnIIS\MyClientConsole.MySrvRefOnIIS.Student.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MySrvRefOnIIS\MyService.wsdl" />
@@ -188,9 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MySrvRefOnIIS\MyServiceOnIIS41.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MySrvRefOnIIS\Reference.svcmap">

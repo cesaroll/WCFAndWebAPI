@@ -2,6 +2,7 @@
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using DataLib.Factory;
 using ModelLib.Query;
 using ModelLib.Util;
@@ -11,6 +12,7 @@ namespace TestService
 {
     public class MyService : IMyService
     {
+        #region Resolving Dependency injection at Constructor level
         /*
         private ICountryFactory CountryFactory { get; set; }
 
@@ -25,8 +27,9 @@ namespace TestService
             CountryFactory = countryFactory;
         }
         */
+        #endregion
 
-
+        #region Basic Methods
         public string GetData()
         {
             return "www.youtube.com";
@@ -64,8 +67,9 @@ namespace TestService
 
             return ar;
         }
+        #endregion
 
-
+        #region Country
         public List<Country> CountriesGetAll()
         {
             ICountryFactory countryFact = DependencyFactory.Resolve<ICountryFactory>();
@@ -80,6 +84,8 @@ namespace TestService
             return fact.Save(country) as ReturnMsg;
 
         }
+
+        #endregion
 
         #region Method overloading
         public int Multiply(int a, int b)

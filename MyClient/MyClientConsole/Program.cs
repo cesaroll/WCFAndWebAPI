@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using MyClientConsole.MulServiceReference;
@@ -25,19 +26,7 @@ namespace MyClientConsole
             };
 
             var ret = srvClient.CountrySave(country);
-           
-
-            if (ret.Success)
-            {
-                Console.WriteLine("Success!");
-                Console.WriteLine(ret.Message);
-            }
-            else
-            {
-                Console.WriteLine("Erro:");
-                Console.WriteLine(ret.Message + "\n");
-                Console.WriteLine(ret.ex.Message);
-            }
+            ret.PrintReturnMsg();
 
             Console.ReadKey(true);
 

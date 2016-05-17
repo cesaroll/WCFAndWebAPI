@@ -5,10 +5,10 @@ namespace ModelLib.Query
     [DataContract]
     public class Country
     {
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public int Id { get; set; }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string Name { get; set; } 
     }
 }

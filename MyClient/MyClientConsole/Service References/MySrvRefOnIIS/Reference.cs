@@ -99,10 +99,8 @@ namespace MyClientConsole.MySrvRefOnIIS {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -115,7 +113,7 @@ namespace MyClientConsole.MySrvRefOnIIS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int Id {
             get {
                 return this.IdField;
@@ -128,7 +126,7 @@ namespace MyClientConsole.MySrvRefOnIIS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string Name {
             get {
                 return this.NameField;
@@ -153,21 +151,21 @@ namespace MyClientConsole.MySrvRefOnIIS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SvcReturnMsg", Namespace="http://schemas.datacontract.org/2004/07/ModelLib.Util")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReturnMsg", Namespace="http://schemas.datacontract.org/2004/07/ModelLib.Util")]
     [System.SerializableAttribute()]
-    public partial class SvcReturnMsg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ReturnMsg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExceptionMsgField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool SuccessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Exception exField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -176,6 +174,19 @@ namespace MyClientConsole.MySrvRefOnIIS {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExceptionMsg {
+            get {
+                return this.ExceptionMsgField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExceptionMsgField, value) != true)) {
+                    this.ExceptionMsgField = value;
+                    this.RaisePropertyChanged("ExceptionMsg");
+                }
             }
         }
         
@@ -201,19 +212,6 @@ namespace MyClientConsole.MySrvRefOnIIS {
                 if ((this.SuccessField.Equals(value) != true)) {
                     this.SuccessField = value;
                     this.RaisePropertyChanged("Success");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Exception ex {
-            get {
-                return this.exField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.exField, value) != true)) {
-                    this.exField = value;
-                    this.RaisePropertyChanged("ex");
                 }
             }
         }
@@ -275,10 +273,10 @@ namespace MyClientConsole.MySrvRefOnIIS {
         System.Threading.Tasks.Task<System.Collections.Generic.List<MyClientConsole.MySrvRefOnIIS.Country>> CountriesGetAllAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountrySave", ReplyAction="http://tempuri.org/CountriesService/CountrySaveResponse")]
-        MyClientConsole.MySrvRefOnIIS.SvcReturnMsg CountrySave(MyClientConsole.MySrvRefOnIIS.Country Country);
+        MyClientConsole.MySrvRefOnIIS.ReturnMsg CountrySave(MyClientConsole.MySrvRefOnIIS.Country Country);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/CountrySave", ReplyAction="http://tempuri.org/CountriesService/CountrySaveResponse")]
-        System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.SvcReturnMsg> CountrySaveAsync(MyClientConsole.MySrvRefOnIIS.Country Country);
+        System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.ReturnMsg> CountrySaveAsync(MyClientConsole.MySrvRefOnIIS.Country Country);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CountriesService/MultiplyInt", ReplyAction="http://tempuri.org/CountriesService/MultiplyIntResponse")]
         int MultiplyInt(int a, int b);
@@ -376,11 +374,11 @@ namespace MyClientConsole.MySrvRefOnIIS {
             return base.Channel.CountriesGetAllAsync();
         }
         
-        public MyClientConsole.MySrvRefOnIIS.SvcReturnMsg CountrySave(MyClientConsole.MySrvRefOnIIS.Country Country) {
+        public MyClientConsole.MySrvRefOnIIS.ReturnMsg CountrySave(MyClientConsole.MySrvRefOnIIS.Country Country) {
             return base.Channel.CountrySave(Country);
         }
         
-        public System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.SvcReturnMsg> CountrySaveAsync(MyClientConsole.MySrvRefOnIIS.Country Country) {
+        public System.Threading.Tasks.Task<MyClientConsole.MySrvRefOnIIS.ReturnMsg> CountrySaveAsync(MyClientConsole.MySrvRefOnIIS.Country Country) {
             return base.Channel.CountrySaveAsync(Country);
         }
         

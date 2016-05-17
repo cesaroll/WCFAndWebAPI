@@ -107,7 +107,7 @@
   <xs:element name="CountrySaveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ModelLib.Util" minOccurs="0" name="CountrySaveResult" nillable="true" type="q9:SvcReturnMsg" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ModelLib.Util" minOccurs="0" name="CountrySaveResult" nillable="true" type="q9:ReturnMsg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

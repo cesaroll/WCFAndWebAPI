@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.CompilerServices;
 using DataLib.Util;
 using ModelLib.Query;
 using ModelLib.Util;
@@ -10,6 +11,7 @@ namespace DataLib.Factory
 {
     public class CountryFactory: Factory, ICountryFactory
     {
+        #region GetAll
         /// <summary>
         /// Get All countries
         /// </summary>
@@ -41,7 +43,9 @@ namespace DataLib.Factory
 
             return countries;
         }
+        #endregion
 
+        #region Save
         /// <summary>
         /// Save Country
         /// </summary>
@@ -71,7 +75,7 @@ When Not Matched Then
                 
                 cmd.Parameters.Add("@Id", SqlDbType.Int).Value = country.Id;
                 cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = country.Name;
-                
+
                 conn.Open();
 
                 if (cmd.ExecuteNonQuery() == 1)
@@ -84,7 +88,7 @@ When Not Matched Then
             {
                 retMsg.Success = false;
                 retMsg.Message = "Country was not saved.";
-                retMsg.ex = e;
+                retMsg.ExceptionMsg = e.Message;
             }
             finally
             {
@@ -102,5 +106,6 @@ When Not Matched Then
             return retMsg;
 
         }
+        #endregion
     }
 }

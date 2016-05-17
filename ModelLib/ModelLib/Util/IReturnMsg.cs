@@ -7,7 +7,7 @@ namespace ModelLib.Util
         bool Success { get; set; }
         
         string Message { get; set; }
-        
-        Exception ex { get; set; } 
+
+        string ExceptionMsg { get; set; } 
     }
 }
