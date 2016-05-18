@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses.Service.Model", "Courses.Service.Model\Courses.Service.Model.csproj", "{13C64317-1258-4CDF-B01E-FF8741EAAD45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses.Service.Library", "Courses.Service.Library\Courses.Service.Library.csproj", "{4391D007-0992-4FDD-9611-6591E0754B43}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Courses", "http://localhost/Courses", "{9AC2BB66-3745-43F2-A358-ED12B37B5486}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{4391d007-0992-4fdd-9611-6591e0754b43}|Courses.Service.Library.dll;{13C64317-1258-4CDF-B01E-FF8741EAAD45}|Courses.Service.Model.dll;{0C4A69BA-4B59-42A7-B15E-7BCFE87BCF8E}|Courses.Service.Repo.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Courses"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\Courses\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Courses\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Courses"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\Courses\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Courses\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\inetpub\wwwroot\Courses\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses.Client", "Courses.Client\Courses.Client.csproj", "{B1E237C1-9697-45AE-88ED-91FBC7FCF029}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9AC2BB66-3745-43F2-A358-ED12B37B5486} = {9AC2BB66-3745-43F2-A358-ED12B37B5486}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses.Service.Repo", "Courses.Service.Repo\Courses.Service.Repo.csproj", "{0C4A69BA-4B59-42A7-B15E-7BCFE87BCF8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13C64317-1258-4CDF-B01E-FF8741EAAD45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C64317-1258-4CDF-B01E-FF8741EAAD45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C64317-1258-4CDF-B01E-FF8741EAAD45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C64317-1258-4CDF-B01E-FF8741EAAD45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4391D007-0992-4FDD-9611-6591E0754B43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4391D007-0992-4FDD-9611-6591E0754B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4391D007-0992-4FDD-9611-6591E0754B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4391D007-0992-4FDD-9611-6591E0754B43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC2BB66-3745-43F2-A358-ED12B37B5486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC2BB66-3745-43F2-A358-ED12B37B5486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC2BB66-3745-43F2-A358-ED12B37B5486}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC2BB66-3745-43F2-A358-ED12B37B5486}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B1E237C1-9697-45AE-88ED-91FBC7FCF029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E237C1-9697-45AE-88ED-91FBC7FCF029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E237C1-9697-45AE-88ED-91FBC7FCF029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E237C1-9697-45AE-88ED-91FBC7FCF029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C4A69BA-4B59-42A7-B15E-7BCFE87BCF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C4A69BA-4B59-42A7-B15E-7BCFE87BCF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C4A69BA-4B59-42A7-B15E-7BCFE87BCF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4A69BA-4B59-42A7-B15E-7BCFE87BCF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

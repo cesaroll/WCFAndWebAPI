@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Courses/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Courses.Service.Model.Contracts" />
+  <xs:import schemaLocation="http://localhost/Courses/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Courses.Service.Model.Util" />
+  <xs:element name="AddToCourses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Courses.Service.Model.Contracts" minOccurs="0" name="course" nillable="true" type="q1:Course" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddToCoursesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListCourses">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListCoursesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Courses.Service.Model.Util" minOccurs="0" name="ListCoursesResult" nillable="true" type="q2:ReturnMsg" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Courses.Service.Model.Contracts" minOccurs="0" name="Courses" nillable="true" type="q3:ArrayOfCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
