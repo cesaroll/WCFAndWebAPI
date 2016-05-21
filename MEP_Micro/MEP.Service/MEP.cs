@@ -12,7 +12,12 @@ namespace MEP.Service
             try
             {
                 var emailLogic = new EmailLogic();
-                emailLogic.Send(email);
+                
+                var rm = emailLogic.Send(email);
+                
+                var cb = OperationContext.Current.GetCallbackChannel<IMEPCallBack>();
+                cb.SendEmailCallBack(rm, email);
+
             }
             catch (Exception e)
             {

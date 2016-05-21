@@ -8,4 +8,12 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SendEmailCallBack">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MEP.Service.Contract" minOccurs="0" name="returnMsg" nillable="true" type="q2:ReturnMsg" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MEP.Service.Contract" minOccurs="0" name="email" nillable="true" type="q3:Email" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

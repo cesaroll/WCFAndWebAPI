@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contract\Email.cs" />
+    <Compile Include="Contract\ReturnMsg.cs" />
     <Compile Include="IMEP.cs" />
     <Compile Include="Logic\EmailLogic.cs" />
     <Compile Include="Logic\ErrorLogic.cs" />

@@ -9,4 +9,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Email" nillable="true" type="tns:Email" />
+  <xs:complexType name="ReturnMsg">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExceptionMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnMsg" nillable="true" type="tns:ReturnMsg" />
 </xs:schema>

@@ -8,8 +8,10 @@ namespace MEP.Service.Logic
     {
         #region IEmailLogic Implementations
 
-        public virtual void Send(Email email)
+        public virtual ReturnMsg Send(Email email)
         {
+            var rm = new ReturnMsg();
+
             try
             {
                 var mailMsg = GetMailMessage(email);
@@ -17,6 +19,9 @@ namespace MEP.Service.Logic
                 var smtpClient = GetSmtpClient();
 
                 smtpClient.Send(mailMsg);
+
+                rm.Message = "Email Sent";
+
             }
             catch (Exception e)
             {
@@ -24,8 +29,15 @@ namespace MEP.Service.Logic
 
                 errorLogic.LogError(e);
 
-                throw e;
+                //throw e;
+
+                rm.Success = false;
+                rm.Message = "Email not sent!";
+                rm.ExceptionMsg = e.Message;
             }
+
+            return rm;
+
         }
 
         #endregion
