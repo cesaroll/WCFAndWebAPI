@@ -1,11 +1,9 @@
 ﻿using MEP.Models.Data;
 
-namespace MEP.DataAccess.Data
+namespace MEP.DataAccess
 {
-    public class App : IApp
+    public partial class App : IApp
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+       
     }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fe38db4a-a9af-43bc-b527-d00b29b62655" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18946/MEP.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MEP.disco" MetadataType="Disco" ID="9d8364f1-f1fe-4aa8-9f29-bc491d0904c5" SourceId="1" SourceUrl="http://localhost:18946/MEP.svc?disco" />
+    <MetadataFile FileName="MEP.xsd" MetadataType="Schema" ID="7253828c-56ed-48a8-ad73-2388ebc077e5" SourceId="1" SourceUrl="http://localhost:18946/MEP.svc?xsd=xsd0" />
+    <MetadataFile FileName="MEP1.xsd" MetadataType="Schema" ID="4a9b7ec1-8f3e-40a3-b471-416cec492b56" SourceId="1" SourceUrl="http://localhost:18946/MEP.svc?xsd=xsd1" />
+    <MetadataFile FileName="MEP.wsdl" MetadataType="Wsdl" ID="f04b6a4f-e5a6-4f65-a217-968a7d5cfe2d" SourceId="1" SourceUrl="http://localhost:18946/MEP.svc?wsdl" />
+    <MetadataFile FileName="MEP2.xsd" MetadataType="Schema" ID="ca225db3-cd02-4d28-8acf-15c7f5e06b63" SourceId="1" SourceUrl="http://localhost:18946/MEP.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

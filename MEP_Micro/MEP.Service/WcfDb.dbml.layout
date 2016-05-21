@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="WcfDb">
+  <DataContextMoniker Name="/WcfDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ebde632d-2434-4c4e-aad6-a14207a1e495" absoluteBounds="3.5, 0.875, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/WcfDbDataContext/Error" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be553048-a8c3-4f90-89da-62335704bf10" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aba78518-0342-4287-b9c9-79135b9ec5b3" absoluteBounds="0.75, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/WcfDbDataContext/App" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5003f7a-30e4-4dd9-94f8-0c8c8228593b" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.69314697265625); (3.5 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WcfDbDataContext/App/T_M_APP_T_APPS_ERROR" />
+      <nodes>
+        <classShapeMoniker Id="aba78518-0342-4287-b9c9-79135b9ec5b3" />
+        <classShapeMoniker Id="ebde632d-2434-4c4e-aad6-a14207a1e495" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

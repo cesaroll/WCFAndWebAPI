@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WCF" Class="MyDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=WCF;User ID=websvcapp" SettingsObjectName="MEP.DataAccess.Properties.Settings" SettingsPropertyName="WCFConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="WCF.T_M_APPS" Member="Apps">
+    <Type Name="App">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="Apps_Errors" Member="Errors" Storage="_T_APPS_ERRORs" ThisKey="Id" OtherKey="App_Id" Type="Error" />
+    </Type>
+  </Table>
+  <Table Name="WCF.T_APPS_ERRORS" Member="Errors">
+    <Type Name="Error">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="App_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="Apps_Errors" Member="App" Storage="_T_M_APP" ThisKey="App_Id" OtherKey="Id" Type="App" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
