@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Employees.Service", "WCF.Employees.Service\WCF.Employees.Service.csproj", "{153AE924-5515-42D8-ADBD-8FD2D3D41FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Employees.Client", "WCF.Employees.Client\WCF.Employees.Client.csproj", "{91819E05-B3CF-4CB1-9E8A-D06491FA89FA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{153AE924-5515-42D8-ADBD-8FD2D3D41FF6} = {153AE924-5515-42D8-ADBD-8FD2D3D41FF6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{153AE924-5515-42D8-ADBD-8FD2D3D41FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153AE924-5515-42D8-ADBD-8FD2D3D41FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153AE924-5515-42D8-ADBD-8FD2D3D41FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153AE924-5515-42D8-ADBD-8FD2D3D41FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91819E05-B3CF-4CB1-9E8A-D06491FA89FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91819E05-B3CF-4CB1-9E8A-D06491FA89FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91819E05-B3CF-4CB1-9E8A-D06491FA89FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91819E05-B3CF-4CB1-9E8A-D06491FA89FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MvcDb">
+  <DataContextMoniker Name="/MvcDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="122af326-7627-48e0-8242-0356b4f5dea4" absoluteBounds="0.75, 1, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/MvcDbDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d447fede-2eaf-4e9d-a6a7-7d31ea83a141" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8859a706-0653-442c-9597-4f5a956f0cb9" absoluteBounds="4, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/MvcDbDataContext/SalaryHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dae89373-6458-4098-8de8-a732ac794149" absoluteBounds="4.015, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.78929768880208); (4 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MvcDbDataContext/Employee/Employee_T_Salary_History" />
+      <nodes>
+        <classShapeMoniker Id="122af326-7627-48e0-8242-0356b4f5dea4" />
+        <classShapeMoniker Id="8859a706-0653-442c-9597-4f5a956f0cb9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
