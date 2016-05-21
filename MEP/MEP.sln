@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEP.Models", "MEP.Models\MEP.Models.csproj", "{4D751F2D-9048-44BE-BADA-2CA8A37BF450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEP.DataAccess", "MEP.DataAccess\MEP.DataAccess.csproj", "{48556D29-BA13-4FEF-9043-4DC37C025EC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEP.Logic", "MEP.Logic\MEP.Logic.csproj", "{FCB4B7CE-0CD0-4D45-8AFC-3B3C31E1AF3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEP.ServiceLib", "MEP.ServiceLib\MEP.ServiceLib.csproj", "{EE6AABA3-73AB-4BE1-BBE5-335AC4EB31A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEP.DataAccess.Contracts", "MEP.DataAccess.Contracts\MEP.DataAccess.Contracts.csproj", "{87312720-7F39-4877-AC22-CA680D1D07B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEP.Logic.Contracts", "MEP.Logic.Contracts\MEP.Logic.Contracts.csproj", "{485EBC73-9874-49D1-B630-A499C2657989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEP.ServiceHost", "MEP.ServiceHost\MEP.ServiceHost.csproj", "{4F19B00C-07B7-49FC-A77E-A1E6CBD6F5F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D751F2D-9048-44BE-BADA-2CA8A37BF450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D751F2D-9048-44BE-BADA-2CA8A37BF450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D751F2D-9048-44BE-BADA-2CA8A37BF450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D751F2D-9048-44BE-BADA-2CA8A37BF450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48556D29-BA13-4FEF-9043-4DC37C025EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48556D29-BA13-4FEF-9043-4DC37C025EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48556D29-BA13-4FEF-9043-4DC37C025EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48556D29-BA13-4FEF-9043-4DC37C025EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB4B7CE-0CD0-4D45-8AFC-3B3C31E1AF3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB4B7CE-0CD0-4D45-8AFC-3B3C31E1AF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB4B7CE-0CD0-4D45-8AFC-3B3C31E1AF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB4B7CE-0CD0-4D45-8AFC-3B3C31E1AF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE6AABA3-73AB-4BE1-BBE5-335AC4EB31A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6AABA3-73AB-4BE1-BBE5-335AC4EB31A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6AABA3-73AB-4BE1-BBE5-335AC4EB31A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6AABA3-73AB-4BE1-BBE5-335AC4EB31A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87312720-7F39-4877-AC22-CA680D1D07B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87312720-7F39-4877-AC22-CA680D1D07B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87312720-7F39-4877-AC22-CA680D1D07B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87312720-7F39-4877-AC22-CA680D1D07B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485EBC73-9874-49D1-B630-A499C2657989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485EBC73-9874-49D1-B630-A499C2657989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485EBC73-9874-49D1-B630-A499C2657989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485EBC73-9874-49D1-B630-A499C2657989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F19B00C-07B7-49FC-A77E-A1E6CBD6F5F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F19B00C-07B7-49FC-A77E-A1E6CBD6F5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F19B00C-07B7-49FC-A77E-A1E6CBD6F5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F19B00C-07B7-49FC-A77E-A1E6CBD6F5F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
