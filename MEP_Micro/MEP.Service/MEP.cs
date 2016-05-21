@@ -14,10 +14,7 @@ namespace MEP.Service
                 var emailLogic = new EmailLogic();
                 
                 var rm = emailLogic.Send(email);
-                
-                var cb = OperationContext.Current.GetCallbackChannel<IMEPCallBack>();
-                cb.SendEmailCallBack(rm, email);
-
+               
             }
             catch (Exception e)
             {

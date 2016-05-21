@@ -17,28 +17,13 @@ namespace MEP.Client
 
             item.SendEmail();
 
-            while (!item.Finished())
-            {
-                Thread.Sleep(300);
-            }
-        }
-
-        private MEPCallback Callback { get; set; }
-
-        public bool Finished()
-        {
-            return Callback.Received;
         }
 
         protected virtual void SendEmail()
         {
             Console.WriteLine("Calling Service...");
 
-            Callback = new MEPCallback();
-             
-            var context = new InstanceContext(Callback);
-
-            var clientSvc = new MEPClient(context);
+            var clientSvc = new MEPClient();
 
             var email = new Email()
             {
@@ -53,19 +38,5 @@ namespace MEP.Client
         }
     }
 
-    public class MEPCallback : IMEPCallback
-    {
-        public bool Received { get; set; }
-
-        public MEPCallback()
-        {
-            Received = false;
-        }
-
-        public void SendEmailCallBack(ReturnMsg msg, Email email)
-        {
-            Console.WriteLine(msg.Message);
-            Received = true;
-        }
-    }
+  
 }
