@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.HR.DAL", "WCF.HR.DAL\WCF.HR.DAL.csproj", "{B508C673-86DC-4AFE-9AFC-293ED7D40E6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.HR.Service.Lib", "WCF.HR.Service.Lib\WCF.HR.Service.Lib.csproj", "{6AD76F37-A418-4444-83BA-344064A4713C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.HR.Service.Host", "WCF.HR.Service.Host\WCF.HR.Service.Host.csproj", "{EE29C000-43F6-4485-9DA1-E77EBB9BCF09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B508C673-86DC-4AFE-9AFC-293ED7D40E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B508C673-86DC-4AFE-9AFC-293ED7D40E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B508C673-86DC-4AFE-9AFC-293ED7D40E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD76F37-A418-4444-83BA-344064A4713C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD76F37-A418-4444-83BA-344064A4713C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD76F37-A418-4444-83BA-344064A4713C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD76F37-A418-4444-83BA-344064A4713C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE29C000-43F6-4485-9DA1-E77EBB9BCF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE29C000-43F6-4485-9DA1-E77EBB9BCF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE29C000-43F6-4485-9DA1-E77EBB9BCF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE29C000-43F6-4485-9DA1-E77EBB9BCF09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -301,7 +301,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DEPT_MGR_FK">
-          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="0..1" />
+          <End Role="EMPLOYEES" Type="HrModel.EMPLOYEE" Multiplicity="0..1" />
           <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPLOYEES">
@@ -314,7 +314,7 @@
         </Association>
         <Association Name="EMP_DEPT_FK">
           <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="0..1" />
-          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="*" />
+          <End Role="EMPLOYEES" Type="HrModel.EMPLOYEE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DEPARTMENTS">
               <PropertyRef Name="DEPARTMENT_ID" />
@@ -337,8 +337,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EMP_JOB_FK">
-          <End Role="JOBS" Type="Self.JOB" Multiplicity="1" />
-          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="*" />
+          <End Role="JOBS" Type="HrModel.JOB" Multiplicity="1" />
+          <End Role="EMPLOYEES" Type="HrModel.EMPLOYEE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="JOBS">
               <PropertyRef Name="JOB_ID" />
@@ -349,8 +349,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EMP_MANAGER_FK">
-          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="0..1" />
-          <End Role="EMPLOYEES1" Type="Self.EMPLOYEE" Multiplicity="*" />
+          <End Role="EMPLOYEES" Type="HrModel.EMPLOYEE" Multiplicity="0..1" />
+          <End Role="EMPLOYEES1" Type="HrModel.EMPLOYEE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPLOYEES">
               <PropertyRef Name="EMPLOYEE_ID" />
@@ -361,7 +361,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="JHIST_EMP_FK">
-          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="1" />
+          <End Role="EMPLOYEES" Type="HrModel.EMPLOYEE" Multiplicity="1" />
           <End Role="JOB_HISTORY" Type="Self.JOB_HISTORY" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPLOYEES">
@@ -373,7 +373,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="JHIST_JOB_FK">
-          <End Role="JOBS" Type="Self.JOB" Multiplicity="1" />
+          <End Role="JOBS" Type="HrModel.JOB" Multiplicity="1" />
           <End Role="JOB_HISTORY" Type="Self.JOB_HISTORY" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="JOBS">
@@ -386,9 +386,9 @@
         </Association>
         <EntityContainer Name="HrEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DEPARTMENTS" EntityType="Self.DEPARTMENT" />
-          <EntitySet Name="EMPLOYEES" EntityType="Self.EMPLOYEE" />
+          <EntitySet Name="EMPLOYEES" EntityType="HrModel.EMPLOYEE" />
           <EntitySet Name="JOB_HISTORY" EntityType="Self.JOB_HISTORY" />
-          <EntitySet Name="JOBS" EntityType="Self.JOB" />
+          <EntitySet Name="JOBS" EntityType="HrModel.JOB" />
           <EntitySet Name="LOCATIONS" EntityType="Self.LOCATION" />
           <EntitySet Name="REGIONS" EntityType="Self.REGION" />
           <AssociationSet Name="DEPT_LOC_FK" Association="Self.DEPT_LOC_FK">
@@ -516,6 +516,8 @@
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="HR" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToOracle.tt" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
