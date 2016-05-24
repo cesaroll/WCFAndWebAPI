@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using WCF.HR.DAL;
 using WCF.HR.Service.Lib.Contracts;
 using WCF.HR.Service.Lib.Logic;
 
@@ -11,11 +10,28 @@ namespace WCF.HR.Service.Lib
     {
         public List<EmployeeContract> GetEmployees()
         {
-            var empLog = new EmployeeLogic();
+            var empLogic = new EmployeeLogic();
 
-            var employees = empLog.GetEmployees();
+            var employees = empLogic.GetEmployees();
 
             return employees;
+
+        }
+        
+        public EmployeeContract SaveEmployee(EmployeeContract employee)
+        {
+            var empLogic = new EmployeeLogic();
+
+            var emp = empLogic.SaveEmployee(employee);
+
+            return emp;
+        }
+       
+        public void SaveSalaryHistory(EmployeeContract employee)
+        {
+            var empLogic = new EmployeeLogic();
+
+            empLogic.SaveSalaryHistory(employee);
 
         }
 

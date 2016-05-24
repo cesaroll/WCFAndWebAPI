@@ -92,6 +92,9 @@
     <Compile Include="REGION.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SALARY_HISTORY.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

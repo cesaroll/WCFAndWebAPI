@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HrModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HrModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="DEPARTMENTS">
           <Key>
             <PropertyRef Name="DEPARTMENT_ID" />
@@ -68,6 +68,16 @@
           <Property Name="REGION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="REGION_NAME" Type="varchar2" MaxLength="25" />
         </EntityType>
+        <EntityType Name="SALARY_HISTORY">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+            <PropertyRef Name="SEQ" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="SEQ" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="START_DATE" Type="date" Nullable="false" />
+          <Property Name="SALARY" Type="number" Precision="8" Scale="2" Nullable="false" />
+        </EntityType>
         <Association Name="DEPT_LOC_FK">
           <End Role="LOCATIONS" Type="Self.LOCATIONS" Multiplicity="0..1" />
           <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="*" />
@@ -101,6 +111,18 @@
             </Principal>
             <Dependent Role="EMPLOYEES">
               <PropertyRef Name="DEPARTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EMP_FK">
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="1" />
+          <End Role="SALARY_HISTORY" Type="Self.SALARY_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLOYEES">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Principal>
+            <Dependent Role="SALARY_HISTORY">
+              <PropertyRef Name="EMPLOYEE_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -171,6 +193,7 @@
           <EntitySet Name="JOBS" EntityType="Self.JOBS" Schema="HR" store:Type="Tables" />
           <EntitySet Name="LOCATIONS" EntityType="Self.LOCATIONS" Schema="HR" store:Type="Tables" />
           <EntitySet Name="REGIONS" EntityType="Self.REGIONS" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="SALARY_HISTORY" EntityType="Self.SALARY_HISTORY" Schema="HR" store:Type="Tables" />
           <AssociationSet Name="DEPT_LOC_FK" Association="Self.DEPT_LOC_FK">
             <End Role="LOCATIONS" EntitySet="LOCATIONS" />
             <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
@@ -182,6 +205,10 @@
           <AssociationSet Name="EMP_DEPT_FK" Association="Self.EMP_DEPT_FK">
             <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
             <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+          </AssociationSet>
+          <AssociationSet Name="EMP_FK" Association="Self.EMP_FK">
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="SALARY_HISTORY" EntitySet="SALARY_HISTORY" />
           </AssociationSet>
           <AssociationSet Name="EMP_JOB_FK" Association="Self.EMP_JOB_FK">
             <End Role="JOBS" EntitySet="JOBS" />
@@ -204,8 +231,7 @@
             <End Role="JOB_HISTORY" EntitySet="JOB_HISTORY" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -243,6 +269,7 @@
           <NavigationProperty Name="EMPLOYEES1" Relationship="Self.EMP_MANAGER_FK" FromRole="EMPLOYEES" ToRole="EMPLOYEES1" />
           <NavigationProperty Name="EMPLOYEE1" Relationship="Self.EMP_MANAGER_FK" FromRole="EMPLOYEES1" ToRole="EMPLOYEES" />
           <NavigationProperty Name="JOB_HISTORY" Relationship="Self.JHIST_EMP_FK" FromRole="EMPLOYEES" ToRole="JOB_HISTORY" />
+          <NavigationProperty Name="SALARY_HISTORY" Relationship="HrModel.EMP_FK" FromRole="EMPLOYEE" ToRole="SALARY_HISTORY" />
         </EntityType>
         <EntityType Name="JOB_HISTORY">
           <Key>
@@ -423,7 +450,35 @@
             <End Role="JOBS" EntitySet="JOBS" />
             <End Role="JOB_HISTORY" EntitySet="JOB_HISTORY" />
           </AssociationSet>
+          <EntitySet Name="SALARY_HISTORY" EntityType="HrModel.SALARY_HISTORY" />
+          <AssociationSet Name="EMP_FK" Association="HrModel.EMP_FK">
+            <End Role="EMPLOYEE" EntitySet="EMPLOYEES" />
+            <End Role="SALARY_HISTORY" EntitySet="SALARY_HISTORY" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="SALARY_HISTORY">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+            <PropertyRef Name="SEQ" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="Int32" Nullable="false" />
+          <Property Name="SEQ" Type="Int16" Nullable="false" />
+          <Property Name="START_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="SALARY" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+          <NavigationProperty Name="EMPLOYEE" Relationship="HrModel.EMP_FK" FromRole="SALARY_HISTORY" ToRole="EMPLOYEE" />
+        </EntityType>
+        <Association Name="EMP_FK">
+          <End Type="HrModel.EMPLOYEE" Role="EMPLOYEE" Multiplicity="1" />
+          <End Type="HrModel.SALARY_HISTORY" Role="SALARY_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLOYEE">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Principal>
+            <Dependent Role="SALARY_HISTORY">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -495,6 +550,16 @@
               <MappingFragment StoreEntitySet="REGIONS">
                 <ScalarProperty Name="REGION_ID" ColumnName="REGION_ID" />
                 <ScalarProperty Name="REGION_NAME" ColumnName="REGION_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SALARY_HISTORY">
+            <EntityTypeMapping TypeName="HrModel.SALARY_HISTORY">
+              <MappingFragment StoreEntitySet="SALARY_HISTORY">
+                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+                <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

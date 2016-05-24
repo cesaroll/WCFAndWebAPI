@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b00b9ef-8438-4b55-8722-33c2e9c5ec16" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:32616/SvcHR.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SvcHR.disco" MetadataType="Disco" ID="d1937f9e-ef20-4b14-ae96-7cdbe7f563df" SourceId="1" SourceUrl="http://localhost:32616/SvcHR.svc?disco" />
+    <MetadataFile FileName="HR.wsdl" MetadataType="Wsdl" ID="cc1f0448-ba6e-42a7-a2b6-a76852fdeaf5" SourceId="1" SourceUrl="http://localhost:32616/SvcHR.svc?wsdl" />
+    <MetadataFile FileName="SvcHR.xsd" MetadataType="Schema" ID="53ef4e49-d59a-4931-86b9-a324985a63d3" SourceId="1" SourceUrl="http://localhost:32616/SvcHR.svc?xsd=xsd2" />
+    <MetadataFile FileName="SvcHR1.xsd" MetadataType="Schema" ID="a23d2a8a-d55f-4ea1-b01a-f25eeb8ef1a3" SourceId="1" SourceUrl="http://localhost:32616/SvcHR.svc?xsd=xsd0" />
+    <MetadataFile FileName="SvcHR2.xsd" MetadataType="Schema" ID="c1174d4f-12fe-4efe-8906-0aae2d96e1fc" SourceId="1" SourceUrl="http://localhost:32616/SvcHR.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

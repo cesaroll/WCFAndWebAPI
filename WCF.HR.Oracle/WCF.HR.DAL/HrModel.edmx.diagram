@@ -19,6 +19,8 @@
         <AssociationConnector Association="HrModel.EMP_MANAGER_FK" ManuallyRouted="false" />
         <AssociationConnector Association="HrModel.JHIST_EMP_FK" ManuallyRouted="false" />
         <AssociationConnector Association="HrModel.JHIST_JOB_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HrModel.SALARY_HISTORY" Width="1.5" PointX="0.625" PointY="5.625" />
+        <AssociationConnector Association="HrModel.EMP_FK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

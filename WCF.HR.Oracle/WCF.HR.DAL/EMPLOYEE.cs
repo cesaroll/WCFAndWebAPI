@@ -20,6 +20,7 @@ namespace WCF.HR.DAL
             this.DEPARTMENTS = new HashSet<DEPARTMENT>();
             this.EMPLOYEES1 = new HashSet<EMPLOYEE>();
             this.JOB_HISTORY = new HashSet<JOB_HISTORY>();
+            this.SALARY_HISTORY = new HashSet<SALARY_HISTORY>();
         }
     
         public int EMPLOYEE_ID { get; set; }
@@ -43,5 +44,7 @@ namespace WCF.HR.DAL
         public virtual EMPLOYEE EMPLOYEE1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JOB_HISTORY> JOB_HISTORY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SALARY_HISTORY> SALARY_HISTORY { get; set; }
     }
 }

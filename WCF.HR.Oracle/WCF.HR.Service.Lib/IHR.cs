@@ -11,6 +11,12 @@ namespace WCF.HR.Service.Lib
         List<EmployeeContract> GetEmployees();
 
         [OperationContract]
+        EmployeeContract SaveEmployee(EmployeeContract employee);
+
+        [OperationContract]
+        void SaveSalaryHistory(EmployeeContract employee);
+
+        [OperationContract]
         string Hola();
 
     }

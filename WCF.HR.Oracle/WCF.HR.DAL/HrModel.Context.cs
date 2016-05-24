@@ -31,5 +31,6 @@ namespace WCF.HR.DAL
         public virtual DbSet<JOB> JOBS { get; set; }
         public virtual DbSet<LOCATION> LOCATIONS { get; set; }
         public virtual DbSet<REGION> REGIONS { get; set; }
+        public virtual DbSet<SALARY_HISTORY> SALARY_HISTORY { get; set; }
     }
 }
