@@ -10,9 +10,12 @@ namespace WCF.HR.Service.Lib
     {
         public List<EmployeeContract> GetEmployees()
         {
-            var empLogic = new EmployeeLogic();
+            List<EmployeeContract> employees;
 
-            var employees = empLogic.GetEmployees();
+            using (var empLogic = new EmployeeLogic())
+            {
+                employees = empLogic.GetEmployees();
+            }
 
             return employees;
 
@@ -20,18 +23,20 @@ namespace WCF.HR.Service.Lib
         
         public EmployeeContract SaveEmployee(EmployeeContract employee)
         {
-            var empLogic = new EmployeeLogic();
+            using (var empLogic = new EmployeeLogic())
+            {
+                employee = empLogic.SaveEmployee(employee);
+            }
 
-            var emp = empLogic.SaveEmployee(employee);
-
-            return emp;
+            return employee;
         }
        
         public void SaveSalaryHistory(EmployeeContract employee)
         {
-            var empLogic = new EmployeeLogic();
-
-            empLogic.SaveSalaryHistory(employee);
+            using (var empLogic = new EmployeeLogic())
+            {
+                empLogic.SaveSalaryHistory(employee);
+            }
 
         }
 
