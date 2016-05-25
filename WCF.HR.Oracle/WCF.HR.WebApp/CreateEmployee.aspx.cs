@@ -29,8 +29,6 @@ namespace WCF.Employees.Client
             using (var client = new HRClient())
             {
                 emp = client.SaveEmployee(emp);
-
-                client.SaveSalaryHistory(emp);
             }
 
             Server.Transfer("Employee.aspx");

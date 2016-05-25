@@ -7,9 +7,44 @@ using WCF.HR.Service.Lib.Contracts;
 
 namespace WCF.HR.Service.Lib.Logic
 {
-    public class EmployeeLogic
+    public class EmployeeLogic : IDisposable
     {
+        #region Properties
+        protected HrEntities Ctx { get; set; }
+        protected bool _disposed = false;
 
+        #endregion
+
+        #region Constructor
+        public EmployeeLogic()
+        {
+            Ctx = new HrEntities();
+        }
+        #endregion
+
+        #region Dispose
+        public virtual void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if(_disposed)
+                return;
+
+            if (disposing)
+            {
+                if(Ctx != null)
+                    Ctx.Dispose();
+            }
+
+            _disposed = true;
+        }
+        #endregion
+
+        #region Static Methods
         public static EmployeeContract ToEmployeeContract(EMPLOYEE emp)
         {
             var ec = new EmployeeContract()
@@ -49,20 +84,18 @@ namespace WCF.HR.Service.Lib.Logic
 
             return ec;
         }
-        
-        public List<EmployeeContract> GetEmployees()
+
+        #endregion
+
+        #region Employee Methods
+        public virtual List<EmployeeContract> GetEmployees()
         {
-            var employees = new List<EmployeeContract>();
-
-            using (var ctx = new HrEntities())
-            {
-                employees = ctx.EMPLOYEES.AsParallel().Select(ToEmployeeContract).ToList();
-            }
-
+            var employees = Ctx.EMPLOYEES.AsParallel().Select(ToEmployeeContract).OrderByDescending(x => x.EmployeeId).ToList();
+            
             return employees;
         }
 
-        public EmployeeContract SaveEmployee(EmployeeContract employee)
+        public virtual EmployeeContract SaveEmployee(EmployeeContract employee)
         {
             var emp = ToEmployee(employee);
             
@@ -70,41 +103,52 @@ namespace WCF.HR.Service.Lib.Logic
             emp.JOB_ID = "IT_PROG";
             emp.MANAGER_ID = 103;
             emp.DEPARTMENT_ID = 60;
-
-
-            using (var ctx = new HrEntities())
+            try
             {
-                emp.EMPLOYEE_ID = ctx.EMPLOYEES.Max(x => x.EMPLOYEE_ID) + 1;
+                emp.EMPLOYEE_ID = Ctx.EMPLOYEES.Max(x => x.EMPLOYEE_ID) + 1;
 
-                ctx.EMPLOYEES.Add(emp);
+                Ctx.EMPLOYEES.Add(emp); //Same transaction
+                SaveSalaryHistory(emp); //Same Transaction
 
-                ctx.SaveChanges();
+                Ctx.SaveChanges();
             }
+            catch (Exception)
+            {
+                
+            }
+            
 
             return ToEmployeeContract(emp);
 
         }
 
-        public void SaveSalaryHistory(EmployeeContract employee)
+        public virtual void SaveSalaryHistory(EmployeeContract employee)
         {
             var emp = ToEmployee(employee);
 
+            SaveSalaryHistory(emp);
+            
+            Ctx.SaveChanges();
+        }
+
+        public virtual void SaveSalaryHistory(EMPLOYEE emp)
+        {
             var newSalHist = new SALARY_HISTORY()
             {
-                EMPLOYEE_ID = emp.EMPLOYEE_ID,
+                EMPLOYEE = emp,
                 START_DATE = DateTime.Now,
-                SALARY = (decimal)emp.SALARY
+                SALARY = emp.SALARY?? 0
             };
 
-            using (var ctx = new HrEntities())
-            {
-                newSalHist.SEQ = (short)(ctx.SALARY_HISTORY.Where(x => x.EMPLOYEE_ID == emp.EMPLOYEE_ID).Max(x => x.SEQ) + 1);
+            newSalHist.SEQ = Ctx.SALARY_HISTORY.Where(x => x.EMPLOYEE_ID == emp.EMPLOYEE_ID).Select(x => x.SEQ).DefaultIfEmpty((short)0).Max();
 
-                ctx.SALARY_HISTORY.Add(newSalHist);
+            //newSalHist.SEQ = (short)( Ctx.SALARY_HISTORY.Where(x => x.EMPLOYEE_ID == emp.EMPLOYEE_ID).Max(x => x.SEQ) + 1);
 
-                ctx.SaveChanges();
-            }
+            Ctx.SALARY_HISTORY.Add(newSalHist);
         }
+       
+
+        #endregion
 
     }
 }
