@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfSecurityLib", "WcfSecurityLib\WcfSecurityLib.csproj", "{729E23CB-7E5E-487C-9314-C5C61D29BB24}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WcfSecurity", "http://localhost/WcfSecurity", "{859D6EF0-D9AE-4EF5-90B7-E503DE59789E}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{729e23cb-7e5e-487c-9314-c5c61d29bb24}|WcfSecurityLib.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/WcfSecurity"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\WcfSecurity\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WcfSecurity\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WcfSecurity"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\WcfSecurity\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WcfSecurity\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\inetpub\wwwroot\WcfSecurity\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WcfSecurityClient", "http://localhost:19845", "{CCC387AC-BA70-4F6B-85AA-E5CB7F58889A}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_19845"
+		Debug.AspNetCompiler.PhysicalPath = "..\WcfSecurityClient\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19845\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_19845"
+		Release.AspNetCompiler.PhysicalPath = "..\WcfSecurityClient\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19845\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\WcfSecurityClient\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{729E23CB-7E5E-487C-9314-C5C61D29BB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729E23CB-7E5E-487C-9314-C5C61D29BB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729E23CB-7E5E-487C-9314-C5C61D29BB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729E23CB-7E5E-487C-9314-C5C61D29BB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859D6EF0-D9AE-4EF5-90B7-E503DE59789E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859D6EF0-D9AE-4EF5-90B7-E503DE59789E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859D6EF0-D9AE-4EF5-90B7-E503DE59789E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{859D6EF0-D9AE-4EF5-90B7-E503DE59789E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CCC387AC-BA70-4F6B-85AA-E5CB7F58889A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC387AC-BA70-4F6B-85AA-E5CB7F58889A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC387AC-BA70-4F6B-85AA-E5CB7F58889A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC387AC-BA70-4F6B-85AA-E5CB7F58889A}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
