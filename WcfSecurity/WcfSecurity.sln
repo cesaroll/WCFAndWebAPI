@@ -49,6 +49,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WcfSecurityClient", "http:/
 		SlnRelativePath = "..\WcfSecurityClient\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{859D6EF0-D9AE-4EF5-90B7-E503DE59789E} = {859D6EF0-D9AE-4EF5-90B7-E503DE59789E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
