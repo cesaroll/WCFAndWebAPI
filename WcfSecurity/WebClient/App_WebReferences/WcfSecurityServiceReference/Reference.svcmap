@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7da09d3d-22e0-4bcf-989e-99113d86b8f0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e5752548-e5e2-488b-88b3-023fb7359df7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,12 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/WcfSecurity/Service.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://vmwin10/WcfSecurity/Service.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Calculator.wsdl" MetadataType="Wsdl" ID="1013c029-d056-422a-89a2-688c58ca1023" SourceId="1" SourceUrl="http://localhost/WcfSecurity/Service.svc?wsdl" />
-    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="ad727fee-7f98-4494-b836-e4901bbf8970" SourceId="1" SourceUrl="http://localhost/WcfSecurity/Service.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="0ddd2e36-7370-4f53-8c27-1409266bfb6a" SourceId="1" SourceUrl="http://localhost/WcfSecurity/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="fee36b22-aadc-444c-859c-06223180196d" SourceId="1" SourceUrl="https://vmwin10/WcfSecurity/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Calculator.wsdl" MetadataType="Wsdl" ID="ebfd0267-0761-4359-8202-f47925db6f5c" SourceId="1" SourceUrl="https://vmwin10/WcfSecurity/Service.svc?wsdl" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="cdf32186-8cd6-42ea-a0c7-6059aabb84c9" SourceId="1" SourceUrl="https://vmwin10/WcfSecurity/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="4abee040-9d3b-413a-adaa-1f930750c392" SourceId="1" SourceUrl="https://vmwin10/WcfSecurity/Service.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
