@@ -20,11 +20,15 @@ public partial class _Default : System.Web.UI.Page
             var cc = new CalculatorClient("BasicHttpBinding_ICalculator");
 
             cc.ClientCredentials.UserName.UserName = "test";
-            cc.ClientCredentials.UserName.Password = "t78est";
+            cc.ClientCredentials.UserName.Password = "test";
 
             Response.Write(cc.Add(4, 96));
         }
         catch(MessageSecurityException ex)
+        {
+            Response.Write("Invalid User");
+        }
+        catch(SecurityAccessDeniedException ex)
         {
             Response.Write("Access Denied");
         }
