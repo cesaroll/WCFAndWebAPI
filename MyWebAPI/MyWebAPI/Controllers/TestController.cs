@@ -4,10 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace MyWebAPI.Controllers
 {
-    // ../api/Test
+    /// <summary>
+    /// ../api/Test
+    /// </summary>
+    //[EnableCors("*","*","*")] // Enabled at complete Service Level in WebApiConfig.cs
     public class TestController : ApiController
     {
         string[] s = new string[] {"Cesar Lopez testing Web API ...", "Asp.Net WebAPI"};

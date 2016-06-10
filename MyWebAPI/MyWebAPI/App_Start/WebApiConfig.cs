@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace MyWebAPI
 {
@@ -10,6 +11,12 @@ namespace MyWebAPI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            //Enable Cross Domain Sharing at roject level
+            var corsAttr = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(corsAttr);
+
+            //config.EnableCors();
 
             // Web API routes
             config.MapHttpAttributeRoutes();
