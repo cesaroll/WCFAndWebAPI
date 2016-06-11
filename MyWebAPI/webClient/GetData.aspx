@@ -15,6 +15,7 @@
             $("#btnGetData").click(function() {
                 
                 //jQuery based ajax call
+                //CORS installed and setup on WebService to make this works
                 $.ajax({
                     type: "GET",
                     url: "http://localhost:47801/api/test",
